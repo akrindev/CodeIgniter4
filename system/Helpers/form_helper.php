@@ -937,6 +937,28 @@ if ( ! function_exists('set_radio'))
 
 //--------------------------------------------------------------------
 
+if( ! function_exists('form_error'))
+{
+	/**
+	 * Form Error
+	 *
+	 * Returns the error for a specific form field. This is a helper for the
+	 * validation class.
+	 *
+	 * @param	string
+	 * @param	string
+	 * @return	string
+     */
+  
+    function form_error(string $field = '', string $template = 'single')
+    {
+      return Services::validation()->showError($field, $template);
+    }
+  	
+}
+
+//--------------------------------------------------------------------
+
 if ( ! function_exists('parse_form_attributes'))
 {
 
