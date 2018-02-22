@@ -674,23 +674,22 @@ The following functions are available:
 		defined, the control for ``set_*()`` is handed over to a method of the
 		class instead of the generic helper function.
 
-.. php:function:: form_error([$field = ''[, $prefix = ''[, $suffix = '']]])
+.. php:function:: form_error([$field = ''[, $template = ''])
 
 	:param	string	$field:	Field name
-	:param	string	$prefix: Error opening tag
-    	:param	string	$suffix: Error closing tag
+	:param	string	$template: Error template
     	:returns:	HTML-formatted form validation error message(s)
     	:rtype:	string
 
     	Returns a validation error message from the :doc:`Form Validation Library
     	<../libraries/validation>`, associated with the specified field name.
-    	You can optionally specify opening and closing tag(s) to put around the error
+    	You can optionally specify template to put around the error
     	message.
 
     	Example::
 
 		// Assuming that the 'username' field value was incorrect:
-		echo form_error('myfield', '<div class="error">', '</div>');
+		echo form_error('myfield', '_my_single_error');
 
 		// Would produce: <div class="error">Error message associated with the "username" field.</div>
 
